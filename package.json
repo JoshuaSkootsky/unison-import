@@ -4,8 +4,7 @@
   "private": false,
   "license": "MIT",
   "workspaces": [
-    "packages/*",
-    "examples/*"
+    "packages/*"
   ],
   "scripts": {
     "build": "npm run build --workspaces",

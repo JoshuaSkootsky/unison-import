@@ -19,10 +19,6 @@ packages/*/node_modules
 # Generated content
 content-registry.json
 
-# Example build outputs
-examples/*/dist
-examples/*/node_modules
-
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

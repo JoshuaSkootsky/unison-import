@@ -1,6 +1,6 @@
 {
   "name": "@skootsky/unison-import-cli",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "type": "module",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -10,6 +10,11 @@
       "types": "./dist/index.d.ts"
     }
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JoshuaSkootsky/unison-import.git",
+    "directory": "packages/cli"
+  },
   "bin": {
     "unison-import": "./dist/index.js"
   },
@@ -18,7 +23,7 @@
     "dev": "tsc --watch"
   },
   "dependencies": {
-    "@skootsky/unison-import-ast": "file:../ast",
+    "@skootsky/unison-import-ast": "^0.1.2",
     "@babel/parser": "^7.29.0",
     "@babel/types": "^7.29.0",
     "@babel/generator": "^7.29.0",
@@ -28,5 +33,8 @@
   "devDependencies": {
     "@types/node": "^20.0.0",
     "typescript": "^5.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

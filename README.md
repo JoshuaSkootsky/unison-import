@@ -140,3 +140,35 @@ The "name" is a lie. The hash is the truth.
 ## License
 
 MIT
+
+## Publishing
+
+This monorepo uses [Changesets](https://github.com/changesets/changesets) for version management and publishing.
+
+### Workflow
+
+```bash
+# Step 1: After making changes, document what changed
+npm run change
+
+# Step 2: When ready to release, bump versions and generate CHANGELOGs
+npm run version-packages
+
+# Step 3: Build and publish to npm (requires OTP from your authenticator app)
+npx changeset publish --otp=123456
+```
+
+### How it works
+
+1. **`npm run change`** — Interactive command. Select which packages changed, choose semver bump type (patch/minor/major), and provide a summary. Creates a changeset file in `.changeset/`.
+
+2. **`npm run version-packages`** — Reads all changeset files, updates versions in `package.json`, auto-updates internal dependencies (e.g., if `ast` is bumped, `cli`'s dependency on `ast` updates automatically), and generates/updates `CHANGELOG.md` for each package.
+
+3. **`npx changeset publish`** — Publishes only packages that had their versions bumped. You'll need to provide an OTP (one-time password) from your authenticator app if your npm account has 2FA enabled.
+
+### Notes
+
+- The `.changeset/` folder should be committed to git (contains your changeset files)
+- The generated `CHANGELOG.md` files should be committed
+- If you only changed one package, only that package gets version-bumped and published
+- Use `--dry-run` to preview what would be published without actually publishing

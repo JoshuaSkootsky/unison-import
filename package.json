@@ -12,13 +12,17 @@
     "build:ast": "cd packages/ast && npm run build",
     "build:cli": "cd packages/cli && npm run build",
     "build:vite": "cd packages/vite && npm run build",
+    "change": "changeset",
+    "version-packages": "changeset version",
+    "release": "npm run build && changeset publish",
     "dev": "npm run build && cd examples/react-basic && npm run dev"
   },
   "devDependencies": {
-    "@babel/parser": "^7.29.0",
-    "@babel/types": "^7.29.0",
     "@babel/generator": "^7.29.0",
+    "@babel/parser": "^7.29.0",
     "@babel/traverse": "^7.29.0",
+    "@babel/types": "^7.29.0",
+    "@changesets/cli": "^2.30.0",
     "typescript": "^5.0.0"
   }
 }

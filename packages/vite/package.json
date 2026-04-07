@@ -1,6 +1,6 @@
 {
   "name": "@skootsky/unison-import-vite",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "type": "module",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -9,6 +9,11 @@
       "import": "./dist/index.js",
       "types": "./dist/index.d.ts"
     }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JoshuaSkootsky/unison-import.git",
+    "directory": "packages/vite"
   },
   "scripts": {
     "build": "tsc",
@@ -22,5 +27,8 @@
   },
   "peerDependencies": {
     "vite": ">=5"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

@@ -1,0 +1,24 @@
+{
+  "name": "@skootsky/unison-import",
+  "version": "0.1.0",
+  "private": false,
+  "license": "MIT",
+  "workspaces": [
+    "packages/*",
+    "examples/*"
+  ],
+  "scripts": {
+    "build": "npm run build --workspaces",
+    "build:ast": "cd packages/ast && npm run build",
+    "build:cli": "cd packages/cli && npm run build",
+    "build:vite": "cd packages/vite && npm run build",
+    "dev": "npm run build && cd examples/react-basic && npm run dev"
+  },
+  "devDependencies": {
+    "@babel/parser": "^7.29.0",
+    "@babel/types": "^7.29.0",
+    "@babel/generator": "^7.29.0",
+    "@babel/traverse": "^7.29.0",
+    "typescript": "^5.0.0"
+  }
+}

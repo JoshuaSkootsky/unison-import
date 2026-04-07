@@ -1,0 +1,32 @@
+{
+  "name": "@skootsky/unison-import-cli",
+  "version": "0.1.0",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "bin": {
+    "unison-import": "./dist/index.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch"
+  },
+  "dependencies": {
+    "@skootsky/unison-import-ast": "file:../ast",
+    "@babel/parser": "^7.29.0",
+    "@babel/types": "^7.29.0",
+    "@babel/generator": "^7.29.0",
+    "@babel/traverse": "^7.29.0",
+    "fast-glob": "^3.3.2"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "typescript": "^5.0.0"
+  }
+}
